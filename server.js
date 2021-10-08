@@ -12,6 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
 
+app.use(express.static('public'))
+
+// app.use('/', require('./routes/htmlRoutes'))
+// app.use('/api', require('./routes/apiRoutes'))
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutDB", {
   useNewUrlParser: true,
   //useFindAndModify: false
